@@ -1,1 +1,434 @@
+/* ==========================================
+   JD WRLD STUDIO v1.0
+   style.css
+========================================== */
 
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#111827;
+    color:#fff;
+}
+
+/* Main Layout */
+
+body{
+    display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    background:#1F2937;
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+    border-right:1px solid #374151;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h2{
+    color:#8B5CF6;
+    margin-bottom:5px;
+}
+
+.logo p{
+    color:#9CA3AF;
+    font-size:14px;
+}
+
+/* Navigation */
+
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.sidebar nav a{
+    text-decoration:none;
+    color:white;
+    padding:12px 15px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.sidebar nav a:hover{
+    background:#8B5CF6;
+}
+
+.sidebar nav a.active{
+    background:#8B5CF6;
+}
+
+/* Main */
+
+.main{
+    flex:1;
+    padding:20px;
+    overflow:auto;
+}
+
+/* Header */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#1F2937;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.topbar h1{
+    font-size:30px;
+}
+
+.topbar p{
+    color:#9CA3AF;
+    margin-top:6px;
+}
+
+/* Controls */
+
+.top-controls{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.top-controls label{
+    font-weight:bold;
+}
+
+#bpmValue{
+    width:40px;
+    text-align:center;
+}
+
+/* Buttons */
+
+button{
+    background:#8B5CF6;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+}
+
+button:hover{
+    background:#7C3AED;
+}
+
+/* Cards */
+
+.workspace{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1F2937;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.35);
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#8B5CF6;
+}
+/* ==========================================
+   Drum Sequencer
+========================================== */
+
+#sequencer{
+    display:grid;
+    grid-template-columns:120px repeat(16,40px);
+    gap:8px;
+    overflow-x:auto;
+    padding:10px 0;
+}
+
+.instrument{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding-right:10px;
+    font-weight:bold;
+    color:#E5E7EB;
+}
+
+.step{
+    width:36px;
+    height:36px;
+    background:#374151;
+    border-radius:6px;
+    cursor:pointer;
+    transition:all .2s ease;
+}
+
+.step:hover{
+    transform:scale(1.08);
+    background:#4B5563;
+}
+
+.step.active{
+    background:#8B5CF6;
+}
+
+.step.playing{
+    border:2px solid #22D3EE;
+    box-shadow:0 0 10px #22D3EE;
+}
+
+/* ==========================================
+   Piano
+========================================== */
+
+#piano{
+    display:flex;
+    align-items:flex-start;
+    overflow-x:auto;
+    padding:20px 0;
+}
+
+.white-key{
+    width:50px;
+    height:180px;
+    background:white;
+    border:1px solid #bbb;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    padding-bottom:10px;
+    user-select:none;
+    cursor:pointer;
+}
+
+.white-key:active{
+    background:#ddd;
+}
+
+.black-key{
+    width:32px;
+    height:110px;
+    background:black;
+    color:white;
+    margin-left:-16px;
+    margin-right:-16px;
+    z-index:2;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    padding-bottom:8px;
+    cursor:pointer;
+}
+
+.black-key:active{
+    background:#444;
+}
+
+/* ==========================================
+   Mixer
+========================================== */
+
+#mixer{
+    display:flex;
+    justify-content:space-around;
+    gap:20px;
+    padding-top:15px;
+}
+
+.channel{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.channel label{
+    margin-bottom:10px;
+}
+
+.channel input{
+    writing-mode:bt-lr;
+    -webkit-appearance:slider-vertical;
+    height:150px;
+}
+
+/* ==========================================
+   Recorder
+========================================== */
+
+#recorder{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+}
+
+#audioPlayer{
+    width:100%;
+    margin-top:10px;
+}
+
+/* ==========================================
+   Visualizer
+========================================== */
+
+#visualizer{
+    width:100%;
+    height:180px;
+    background:#111827;
+    border-radius:10px;
+    border:1px solid #374151;
+}
+/* ==========================================
+   Animations
+========================================== */
+
+@keyframes pulse {
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+button:active{
+    animation:pulse .2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    transition:.25s;
+}
+
+.step.playing{
+    animation:pulse .2s infinite;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#8B5CF6;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#1F2937;
+}
+
+/* Inputs */
+
+input[type="range"]{
+    accent-color:#8B5CF6;
+}
+
+/* Responsive */
+
+@media (max-width:900px){
+
+    body{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        border-right:none;
+        border-bottom:1px solid #374151;
+    }
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .top-controls{
+        width:100%;
+        flex-wrap:wrap;
+    }
+
+    .workspace{
+        grid-template-columns:1fr;
+    }
+
+    #sequencer{
+        grid-template-columns:90px repeat(16,32px);
+    }
+
+    .step{
+        width:30px;
+        height:30px;
+    }
+
+    .white-key{
+        width:42px;
+        height:150px;
+    }
+
+    .black-key{
+        width:26px;
+        height:90px;
+        margin-left:-13px;
+        margin-right:-13px;
+    }
+
+    #mixer{
+        flex-wrap:wrap;
+    }
+
+}
+
+@media (max-width:600px){
+
+    .main{
+        padding:10px;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .topbar h1{
+        font-size:24px;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
