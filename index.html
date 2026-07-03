@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Wrld Studio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>🎵 JD WRLD</h2>
+            <p>Studio</p>
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">🏠 Home</a>
+
+            <a href="#">🥁 Drum Machine</a>
+
+            <a href="#">🎹 Piano</a>
+
+            <a href="#">🎤 Recorder</a>
+
+            <a href="#">🎚 Mixer</a>
+
+            <a href="#">🎵 Library</a>
+
+            <a href="#">💾 Projects</a>
+
+            <a href="#">📤 Export</a>
+
+            <a href="#">⚙ Settings</a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>JD WRLD STUDIO</h1>
+
+                <p>Create • Record • Mix • Share</p>
+
+            </div>
+
+            <div class="top-controls">
+
+                <label for="bpm">BPM</label>
+
+                <input
+                    type="range"
+                    id="bpm"
+                    min="60"
+                    max="180"
+                    value="120">
+
+                <span id="bpmValue">120</span>
+
+                <button id="playBtn">
+                    ▶ Play
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Workspace -->
+
+        <section class="workspace">
+
+            <!-- Drum Sequencer -->
+
+            <section class="card">
+
+                <h2>🥁 Drum Machine</h2>
+
+                <div id="sequencer"></div>
+
+            </section>
+
+            <!-- Piano -->
+
+            <section class="card">
+
+                <h2>🎹 Piano Keyboard</h2>
+
+                <div id="piano"></div>
+
+            </section>
+
+            <!-- Mixer -->
+
+            <section class="card">
+
+                <h2>🎚 Mixer</h2>
+
+                <div id="mixer">
+
+                    <div class="channel">
+                        <label>Kick</label>
+                        <input type="range" min="0" max="100" value="80">
+                    </div>
+
+                    <div class="channel">
+                        <label>Snare</label>
+                        <input type="range" min="0" max="100" value="80">
+                    </div>
+
+                    <div class="channel">
+                        <label>HiHat</label>
+                        <input type="range" min="0" max="100" value="80">
+                    </div>
+
+                    <div class="channel">
+                        <label>Clap</label>
+                        <input type="range" min="0" max="100" value="80">
+                    </div>
+                    
+                   <div class="channel">
+                        <label>Master</label>
+                        <input type="range" id="masterVolume" min="0" max="100" value="100">
+</div>
+
+                </div>
+                
+                <div class="channel">
+                    <label>Piano</label>
+                    <input type="range" id="pianoVolume" min="0" max="100" value="80">
+
+                </div>
+
+            </section>
+
+            <!-- Recorder -->
+
+            <section class="card">
+
+                <h2>🎤 Voice Recorder</h2>
+
+                <div id="recorder">
+
+                    <button id="recordBtn">
+                        ⏺ Record
+                    </button>
+
+                    <button id="stopRecordBtn">
+                        ⏹ Stop
+                    </button>
+
+                    <audio id="audioPlayer" controls></audio>
+
+                </div>
+
+            </section>
+
+            <!-- Visualizer -->
+
+            <section class="card">
+
+                <h2>📊 Audio Visualizer</h2>
+
+                <canvas
+                    id="visualizer"
+                    width="900"
+                    height="180">
+                </canvas>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+
+    <script src="js/app.js"></script>
+    <script src="js/piano.js"></script>
+    <script src="js/mixer.js"></script>
+    <script src="js/recorder.js"></script>
+    <script src="js/storage.js"></script>
+
+</body>
+</html>
